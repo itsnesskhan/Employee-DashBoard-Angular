@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center my-3">All Employees Data</h1>
+        <div class="mat-elevation-z8">
+          <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="sno">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> S.No. </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{ row.sno }} </mat-cell>
+            </ng-container>
+  
+            <ng-container matColumnDef="employeeCode">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Code </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{ row.employeeCode }} </mat-cell>
+            </ng-container>
+  
+            <ng-container matColumnDef="employeeName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{ row.employeeName }} </mat-cell>
+            </ng-container>
+  
+            <ng-container matColumnDef="inDuration">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> In Duration </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{ row.inDuration }} </mat-cell>
+            </ng-container>
+  
+            <ng-container matColumnDef="outDuration">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Out Duration </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{ row.outDuration }} </mat-cell>
+            </ng-container>
+  
+            <ng-container matColumnDef="punchRecords">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Punch Records </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{ row.punchRecords }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="attendanceDate">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Attendance Date</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{ row.attendanceDate }} </mat-cell>
+              </ng-container>
+            
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </div>
+        <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style></style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Employee</h2>
+            <ul>
+                <li><a href="#">
+                        <mat-icon>dashboard</mat-icon>
+                        <span>Dashboard</span>
+                    </a></li>
+                <li><a href="#">
+                        <mat-icon>alarm</mat-icon>
+                        <span>TimeSheet</span>
+                    </a></li>
+                <li><a href="#">
+                        <mat-icon>settings</mat-icon>
+                        <span>Settings</span>
+                    </a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="header">Dashboard</div>
+            <div class="button-container menu">
+                <a class="button" (click)="displayChart('day')">Day</a>
+                <a class="button" (click)="displayChart('week')">Week</a>
+                <a class="button" (click)="displayChart('month')">Month</a>
+            </div>
+            <div class="right-sidbar">
+                <!-- <h3 class="text-center">Tracked Hours</h3>
+                <div class="d-flex align-items-center my-3">
+                    <div class="color-box" [style.backgroundColor]="'#4CAF50'"></div>
+                    <div>
+                        <p class="text-muted">WORKED HOURS</p>
+                        <p><b>50h 44m</b></p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center my-3">
+                    <div class="color-box" [style.backgroundColor]="'#FF5722'"></div>
+                    <div>
+                        <p class="text-muted">BREAK HOURS</p>
+                        <p><b>21h 00m</b></p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center my-3">
+                    <div class="color-box" [style.backgroundColor]="'#FFC107'"></div>
+                    <div>
+                        <p class="text-muted">OVERTIME HOURS</p>
+                        <p><b>5h 12m</b></p>
+                    </div>
+                </div> -->
+
+
+            </div>
+            <div class="maincontent">
+                <div class="cart-box">
+                    <h1>Hello, User</h1>
+                    <h5 class="text-muted">Here's your dashoard for today!</h5>
+                </div>
+                <div class="cart-box">
+                    <h5>UPCOMMING HOLLIDAYS</h5>
+                    <table class="table table-striped my-2">
+                        <tr>
+                            <th>AUG 30</th>
+                            <td>Raksha Bandhan</td>
+                        </tr>
+                        <tr>
+                            <th>SEP 30</th>
+                            <td>Ganesh Chaturthi</td>
+                        </tr>
+                        <tr>
+                            <th>OCT 2</th>
+                            <td>Gandhi Jayanti</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="maincontent-2">
+                <div class="cart-box-3">
+                    <div #chartContainer style="width: 900px; height: 500px;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

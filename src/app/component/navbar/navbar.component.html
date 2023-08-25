@@ -1,0 +1,10 @@
+<mat-toolbar class="gradient-navbar" >
+    <span [style.color]="'white'">Employee Mangment</span>
+    <span class="example-spacer"></span>
+    <span style="margin-left:10px;margin-right: 20px;"><a *ngIf="!loggedIn" routerLink="/">Home</a></span>
+    <span style="margin-left:10px;margin-right: 20px;"><a *ngIf="!loggedIn"  routerLink="/customer/signup">Signup</a></span>
+  
+        <span style="margin-left:10px;margin-right: 20px;"><a *ngIf="!loggedIn"  routerLink="/customer/signin">Login</a></span>
+        <span style="margin-left:10px;margin-right: 20px;"><a  *ngIf="loggedIn" >Logout</a></span>
+  </mat-toolbar>
+  

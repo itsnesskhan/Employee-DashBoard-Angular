@@ -1,0 +1,14 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .gradient-navbar {
+    background: linear-gradient(to right, #f5425d, #ff8a46); /* Adjust colors as needed */
+    /* Other styles */
+  }
+  

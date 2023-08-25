@@ -1,0 +1,96 @@
+.box-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+  }
+  
+  .box {
+    flex: 1;
+    margin: 10px;
+    width: 130px;
+    height: 130px;
+    /* background: linear-gradient(rgb(230, 224, 224), rgb(134, 127, 127)); */
+    color: rgb(0, 70, 128);
+    font-size: 15px;
+    text-align: center;
+    line-height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .property-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .property-value {
+    margin: 0;
+  }
+  
+  .less-than-8-hours {
+    background-color: #e63946; /* Coral Red */
+    color: white;
+  }
+  
+  .greater-than-8-hours {
+    background-color: #2a9d8f; /* Teal */
+    color: white;
+  }
+  
+  #attemn {
+    border-left: 5px solid #457b9d; /* Steel Blue */
+  
+  }
+  
+  #punchr {
+    border-left: 5px solid #f4a261; /* Sandy Brown */
+  
+  }
+  
+  #inDur {
+    border-left: 5px solid #6a0572; /* Purple */
+  
+  }
+  
+  #outDur {
+    border-left: 5px solid #d00000; /* Red */
+  
+  }
+  
+  #empName {
+    border-left: 5px solid #1d3557; /* Dark Blue */
+  
+  }
+  
+  #empCode {
+    border-left: 5px solid #ff5733; /* Neon Orange */
+  
+  }
+  
+  .attemn {
+    color: #1d3557;
+  }
+  
+  .punchr {
+    color: #d62828; /* Crimson */
+  }
+  
+  .inDur {
+    color: white;
+  }
+  
+  .outDur {
+    color: #8d99ae; /* Light Grayish Blue */
+  }
+  
+  .empName {
+    color: #2e86de; /* Dodger Blue */
+  }
+  
+  .empCode {
+    color: #ff5733; /* Neon Orange */
+  }
+  

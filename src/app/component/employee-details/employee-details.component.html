@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center my-3">Welcome, {{ empDashName }}</h1>
+      <div class="box-container" *ngFor="let punchData of punchData">
+
+        <div class="box card" id="empCode">
+          <div class="card-body">
+            <p class="property-label empCode">Employee Code</p>
+            <p class="property-value">{{ punchData.employeeCode }}</p>
+          </div>
+        </div>
+        <div class="box card" id="empName">
+          <div class="card-body">
+            <p class="property-label empName">Employee Name</p>
+            <p class="property-value">{{ punchData.employeeName }}</p>
+          </div>
+        </div>
+        <div class="box card" id="inDur" [class.less-than-8-hours]="isLessThan8Hours(punchData.inDuration)"
+          [class.greater-than-8-hours]="isGreaterThan8Hours(punchData.inDuration)">
+          <div class="card-body">
+            <p class="property-label inDur">In Duration</p>
+            <p class="property-value">{{ punchData.inDuration }} hours</p>
+          </div>
+        </div>
+        <div class="box card" id="outDur">
+          <div class="card-body">
+            <p class="property-label outDur">Out Duration</p>
+            <p class="property-value">{{ punchData.outDuration }} hours</p>
+          </div>
+        </div>
+        <!-- <div class="box card" id="punchr">
+          <div class="card-body">
+            <p class="property-label punchr">Punch Records</p>
+            <div class="property-value">
+              <p *ngFor="let punchRecord of punchData.punchRecords | commaSplit">{{ punchRecord }}</p>
+            </div>
+          </div>
+        </div> -->
+        <div class="box card" id="punchr">
+          <div class="card-body">
+            <p class="property-label punchr">Clocked In</p>
+            <div class="property-value"><p>{{totalIN}} Times</p></div>
+          </div>
+        </div>
+        <div class="box card" id="outDur">
+          <div class="card-body">
+            <p class="property-label outDur">Clocked Out</p>
+            <p class="property-value">{{totalOUt}} Times</p>
+          </div>
+        </div>
+        <div class="box card" id="attemn">
+          <div class="card-body">
+            <p class="property-label attemn">Attendance Date</p>
+            <p class="property-value">{{ punchData.attendanceDate }}</p>
+          </div>
+        </div>
+
+      </div>
+      <table class="table table-bordered table-striped my-3">
+        <thead class="thead-dark">
+          <tr>
+            <th>Emp Code</th>
+            <th>Emp Name</th>
+            <th>Attendance Date</th>
+            <th>Punch Records</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of punchData">
+            <td>{{ emp.employeeCode }}</td>
+            <td>{{ emp.employeeName }}</td>
+            <td>{{ emp.attendanceDate }}</td>
+            <td>{{ emp.punchRecords }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
