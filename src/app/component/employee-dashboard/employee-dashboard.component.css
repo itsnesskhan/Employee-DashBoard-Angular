@@ -15,14 +15,22 @@ body{
 }
 
 .wrapper{
-    display: flex;
-    position: relative;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.3fr 2fr;
+    grid-template-rows: 0.2fr 0.2fr 2.0fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar bbar"
+    "sidebar main";
+    gap:5px 5px;
+    color: white;
+    
 }
 
+
 .wrapper .sidebar{
-    position: fixed;
-    width: 200px;
-    height: 100%;
+    grid-area: sidebar;
     padding: 15px 0;
     background-color: white;
     color: black;
@@ -33,7 +41,6 @@ body{
 .sidebar a {
     color: #717171;
     display: flex;
-    margin-top: 5px;
     align-items: center;
     text-decoration: none;
 }
@@ -75,23 +82,23 @@ body{
     background-color: #ddd;
 }
 
-.wrapper .main-content{
-    width: 100%;
-    margin-left: 200px;
+#bbar{
+    grid-area: bbar;
 }
 
-.wrapper .main-content .header{
-    padding: 20px;
+#header{
+    grid-area: header;
+    padding: 10px;
     background: #fff;
+    color: black;
     font-weight: bold;
     border-bottom: 1px solid #e0e4e8;
 }
 
 
+
 .button-container {
     display: flex;
-    gap: 10px;
-    margin-top: 20px;
     border-bottom: 1px solid  #e0e4e8;
     color: orange;
     font-weight: bold;
@@ -102,7 +109,9 @@ body{
     border: none; /* Remove borders */
     background-color: transparent;
     color: #6c757d; /* Muted black color */
-    padding: 10px 20px;
+    padding-left: 20px ;
+    padding-right: 20px;
+    padding-top: 3px;
     border-radius: 0; /* Remove border radius */
     cursor: pointer;
     transition: border-color 0.3s, color 0.3s;
@@ -128,46 +137,46 @@ body{
 
 .cart-box {
     background-color: white;
-    height: 250px;
-    width: 330px;
     border-radius: 5px;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.right-sidbar{
+#content-1{
+    grid-area: content1;
+}
+
+#content-2{
+    grid-area: content2;
+}
+
+#aside-right{
+    grid-area: raside;
     background-color: white;
-    height: 80vh;
-    width: 330px;
     border-radius: 5px;
+    
     padding: 10px;
-    margin-top: 20px;
-    padding-left: 30px;
-    float: right;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.maincontent {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "content1 content2 raside"
+        "content3 content3 raside";
+    color: black;
+    gap: 1rem;
 }
 
-.maincontent-2{
-    display: flex;
-    margin-top: 5px;
-    justify-content: space-around;
-}
 
-.cart-box-3{
+#content-3{
     background-color: white;
-    height: 423px;
-    width: 700px;
+    grid-area: content3;
     border-radius: 5px;
     padding: 10px;
-    margin-top: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
    
 }
@@ -184,56 +193,24 @@ body{
     justify-content: space-around;
 }
 
-/* Existing styles */
-
-/* Media query for small screens */
-@media screen and (max-width: 768px) {
-    .wrapper {
-        flex-direction: column;
-    }
-    
-    .wrapper .sidebar {
-        position: static;
-        width: 100%;
-        height: auto;
-        border: none;
-        padding: 15px;
-        text-align: center;
-    }
-    
-    .wrapper .main-content {
-        margin-left: 0;
-        padding: 10px;
+@media only screen and (max-width:550px) {
+    .wrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.2fr  0.3fr 1fr ;
+        grid-template-areas: 
+        "header"
+        "bbar"
+        "sidebar"
+        "main"
     }
 
-    .button-container {
-        flex-direction: column;
-        border-bottom: none;
-    }
-
-    .button {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .right-sidbar {
-        width: 100%;
-        float: none;
-    }
-
-    .maincontent,
-    .maincontent-2 {
-        flex-direction: column;
-        align-items: center;
-        padding: 5px;
-    }
-
-    .cart-box,
-    .cart-box-3 {
-        width: 100%;
-        max-width: 100%;
-        padding: 5px;
-
+    main{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.2fr 1fr 0.5fr;
+        grid-template-areas: 
+         "content1"
+         "content2"
+         "content3"
+         "raside";
     }
 }
