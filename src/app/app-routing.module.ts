@@ -10,10 +10,10 @@ const routes: Routes = [
   {path:'', component:EmployeeDashboardComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'all-employee',component:AllEmployeeComponent},
-  {path:'employee-details/empCode/:empCode',component:EmployeeDetailsComponent},
-  {path:'employee-details/empName/:empName',component:EmployeeDetailsComponent},
-  {path:'employee-details/code/:empCode/:date',component:EmployeeDetailsComponent},
-  {path:'employee-details/name/:empName/:date',component:EmployeeDetailsComponent},
+  {path:'employee-details/empCode/:empCode',component:EmployeeDashboardComponent},
+  {path:'employee-details/empName/:empName',component:EmployeeDashboardComponent},
+  {path:'employee-details/code/:empCode/:date',component:EmployeeDashboardComponent},
+  {path:'employee-details/name/:empName/:date',component:EmployeeDashboardComponent},
 ]
 
 @NgModule({

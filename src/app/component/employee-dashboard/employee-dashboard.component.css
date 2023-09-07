@@ -18,12 +18,12 @@ body{
     display: grid;
     height: 100vh;
     grid-template-columns: 0.3fr 2fr;
-    grid-template-rows: 0.2fr 0.2fr 2.0fr;
+    grid-template-rows: 0.1fr 0.1fr 1.6fr;
     grid-template-areas: 
     "sidebar header"
     "sidebar bbar"
     "sidebar main";
-    gap:5px 5px;
+    /* gap: 5px 5px; */
     color: white;
     
 }
@@ -84,6 +84,7 @@ body{
 
 #bbar{
     grid-area: bbar;
+    padding: 4px;
 }
 
 #header{
@@ -193,6 +194,11 @@ main{
     justify-content: space-around;
 }
 
+#main{
+    grid-column: 2;
+    margin-left: 1rem;
+}
+
 @media only screen and (max-width:550px) {
     .wrapper{
         grid-template-columns: 1fr;
@@ -212,5 +218,14 @@ main{
          "content2"
          "content3"
          "raside";
+    }
+
+    #main{
+        grid-column:auto;
+        margin-left: 0;
+    }
+
+    .wrapper .sidebar h2{
+        text-align: left;
     }
 }

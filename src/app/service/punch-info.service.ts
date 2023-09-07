@@ -29,6 +29,15 @@ export class PunchInfoService {
     return this._http.get<PunchData[]>(`${this.url}/getAttendanceByEmpCodeAndDate/${empCode}/${date}`)
   }
 
+  public getPunchDataOfWeekByempCodeandDate(empCode:number, date:string):Observable<PunchData[]>{
+    return this._http.get<PunchData[]>(`${this.url}/getAttendanceOfWeekByEmpCodeAndDate/${empCode}/${date}`)
+  }
+
+  public getPunchDataOfMonthByempCodeandDate(empCode:number, date:string):Observable<PunchData[]>{
+    return this._http.get<PunchData[]>(`${this.url}/getAttendanceOfMonthByEmpCodeAndDate/${empCode}/${date}`)
+  }
+
+
   public getPunchDataByNameandDate(empName:string, date:string):Observable<PunchData[]>{
     return this._http.get<PunchData[]>(`${this.url}/getAttendanceByEmpNameAndDate/${empName}/${date}`)
   }

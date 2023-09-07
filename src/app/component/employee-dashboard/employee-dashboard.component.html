@@ -15,7 +15,7 @@
 <body>
     <div class="wrapper">
         <div class="sidebar">
-            <h2 class="text-center text-muted">Employee</h2>
+            <h2 class="text-muted">Employee</h2>
             <ul>
                 <li><a href="#">
                         <mat-icon>dashboard</mat-icon>
@@ -39,12 +39,13 @@
                 <a class="button" (click)="displayChart('day')">Day</a>
                 <a class="button" (click)="displayChart('week')">Week</a>
                 <a class="button" (click)="displayChart('month')">Month</a>
+                
             </div>
         </div>
 
         <main id="main">
             <div class="cart-box" id="content-1">
-                <h1>Hello, User</h1>
+                <h1>Hello, {{empDashName}}</h1>
                 <h5 class="text-muted">Here's your dashoard for today!</h5>
             </div>
 
